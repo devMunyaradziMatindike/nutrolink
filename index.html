@@ -77,6 +77,23 @@ transform: translateY(0);
 background: rgba(37, 99, 235, 0.2);
 color: #60a5fa;
 }
+/* Modal Animation */
+#product-modal {
+opacity: 0;
+transition: opacity 0.3s ease;
+pointer-events: none;
+}
+#product-modal:not(.hidden) {
+opacity: 1;
+pointer-events: auto;
+}
+#product-modal > div {
+transform: scale(0.9);
+transition: transform 0.3s ease;
+}
+#product-modal:not(.hidden) > div {
+transform: scale(1);
+}
 </style>
 <link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">
 .font-geist { font-family: 'Geist', sans-serif !important; }
@@ -220,7 +237,7 @@ color: #60a5fa;
 
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Desktop POS Systems -->
-            <div class="group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)]">
+            <div class="product-card group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)] cursor-pointer" data-product-name="Desktop POS Systems" data-product-image="pos monitor.png">
               <div class="aspect-[4/3] w-full overflow-hidden bg-black relative">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-neutral-900 z-10"></div>
                 <img src="pos monitor.png" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Desktop POS Systems">
@@ -260,7 +277,7 @@ color: #60a5fa;
             </div>
 
             <!-- Handheld POS -->
-            <div class="group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-100 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)]">
+            <div class="product-card group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-100 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)] cursor-pointer" data-product-name="Handheld POS" data-product-image="handheld pointof sale.png">
               <div class="aspect-[4/3] w-full overflow-hidden bg-black relative">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-neutral-900 z-10"></div>
                 <img src="handheld pointof sale.png" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Handheld Point of Sale Systems">
@@ -294,7 +311,7 @@ color: #60a5fa;
             </div>
 
             <!-- Tablet POS -->
-            <div class="group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-100 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)]">
+            <div class="product-card group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-100 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)] cursor-pointer" data-product-name="Tablet POS" data-product-image="tablet point of sale.png">
               <div class="aspect-[4/3] w-full overflow-hidden bg-black relative">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-neutral-900 z-10"></div>
                 <img src="tablet point of sale.png" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Tablet Point of Sale Systems">
@@ -328,7 +345,7 @@ color: #60a5fa;
             </div>
 
             <!-- 58mm Printers -->
-            <div class="group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-200 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)]">
+            <div class="product-card group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-200 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)] cursor-pointer" data-product-name="58mm Printers" data-product-image="58mm printer.png">
               <div class="aspect-[4/3] w-full overflow-hidden bg-black relative">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-neutral-900 z-10"></div>
                 <img src="58mm printer.png" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="58mm Thermal Printers">
@@ -362,7 +379,7 @@ color: #60a5fa;
             </div>
 
             <!-- 80mm Printers -->
-            <div class="group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-200 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)]">
+            <div class="product-card group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-200 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)] cursor-pointer" data-product-name="80mm Printers" data-product-image="80mm printer.png">
               <div class="aspect-[4/3] w-full overflow-hidden bg-black relative">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-neutral-900 z-10"></div>
                 <img src="80mm printer.png" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="80mm Thermal Printers">
@@ -396,7 +413,7 @@ color: #60a5fa;
             </div>
 
             <!-- Cash Drawers -->
-            <div class="group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-200 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)]">
+            <div class="product-card group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-200 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)] cursor-pointer" data-product-name="Cash Drawers" data-product-image="cash drawer.png">
               <div class="aspect-[4/3] w-full overflow-hidden bg-black relative">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-neutral-900 z-10"></div>
                 <img src="cash drawer.png" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Cash Drawers">
@@ -430,7 +447,7 @@ color: #60a5fa;
             </div>
 
             <!-- Barcode Scanners -->
-            <div class="group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-300 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)]">
+            <div class="product-card group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-300 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)] cursor-pointer" data-product-name="Barcode Scanners" data-product-image="barcode scanner.png">
               <div class="aspect-[4/3] w-full overflow-hidden bg-black relative">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-neutral-900 z-10"></div>
                 <img src="barcode scanner.png" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Barcode Scanners">
@@ -464,7 +481,7 @@ color: #60a5fa;
             </div>
 
             <!-- IT Support & Installation -->
-            <div class="group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-300 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)]">
+            <div class="product-card group relative rounded-2xl border border-white/10 bg-neutral-900 overflow-hidden reveal delay-300 transition-all duration-500 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(37,99,235,0.15)] cursor-pointer" data-product-name="IT Support & Installation" data-product-image="point of sale systems.png">
               <div class="aspect-[4/3] w-full overflow-hidden bg-black relative">
                 <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/30 to-neutral-900 z-10"></div>
                 <img src="point of sale systems.png" class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" alt="IT Support & Installation">
@@ -1218,6 +1235,35 @@ color: #60a5fa;
       </a>
     </div>
 
+    <!-- Product Enquiry Modal -->
+    <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm">
+      <div class="relative mx-4 w-full max-w-md rounded-2xl border border-white/10 bg-neutral-900 p-6 shadow-2xl">
+        <button id="modal-close" class="absolute right-4 top-4 text-zinc-400 hover:text-white transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6L6 18"></path>
+            <path d="M6 6l12 12"></path>
+          </svg>
+        </button>
+        
+        <div class="text-center">
+          <div class="mb-4 flex justify-center">
+            <img id="modal-product-image" src="" alt="" class="h-32 w-32 rounded-lg object-cover">
+          </div>
+          <h3 id="modal-product-name" class="mb-2 text-xl font-bold text-white font-display"></h3>
+          <p class="mb-6 text-sm text-zinc-400 font-geist">Would you like to enquire about this product?</p>
+          
+          <div class="flex gap-3">
+            <button id="modal-no" class="flex-1 rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm font-medium text-white hover:bg-white/10 transition font-geist">
+              No, Thanks
+            </button>
+            <button id="modal-yes" class="flex-1 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dim transition font-geist">
+              Yes, Enquire
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Scripts -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -1341,6 +1387,98 @@ color: #60a5fa;
           updateCarousel();
         }, 5000);
       }
+
+      // Product Enquiry Modal
+      const productCards = document.querySelectorAll('.product-card');
+      const modal = document.getElementById('product-modal');
+      const modalClose = document.getElementById('modal-close');
+      const modalNo = document.getElementById('modal-no');
+      const modalYes = document.getElementById('modal-yes');
+      const modalProductName = document.getElementById('modal-product-name');
+      const modalProductImage = document.getElementById('modal-product-image');
+      const whatsappNumber = '263714621888';
+      let currentProductData = null;
+
+      // Open modal when product card is clicked
+      productCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+          // Don't trigger if clicking on links or buttons inside
+          if (e.target.tagName === 'A' || e.target.closest('a')) return;
+          
+          const productName = card.getAttribute('data-product-name');
+          const productImage = card.getAttribute('data-product-image');
+          
+          currentProductData = { name: productName, image: productImage };
+          
+          modalProductName.textContent = productName;
+          modalProductImage.src = productImage;
+          modalProductImage.alt = productName;
+          
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Close modal functions
+      const closeModal = () => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+        currentProductData = null;
+      };
+
+      modalClose?.addEventListener('click', closeModal);
+      modalNo?.addEventListener('click', closeModal);
+
+      // Close on background click
+      modal?.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+
+      // Handle Yes button - Open WhatsApp with image
+      modalYes?.addEventListener('click', async () => {
+        if (currentProductData) {
+          // Get the full image URL (convert relative path to absolute)
+          const imageUrl = new URL(currentProductData.image, window.location.href).href;
+          const message = `Hello! I'm interested in learning more about ${currentProductData.name}. Could you please provide more information?\n\nProduct Image: ${imageUrl}`;
+          
+          // Try Web Share API first (better for sharing images on mobile)
+          if (navigator.share && navigator.canShare) {
+            try {
+              // Fetch the image as a blob
+              const response = await fetch(currentProductData.image);
+              const blob = await response.blob();
+              const file = new File([blob], `${currentProductData.name.replace(/\s+/g, '_')}.png`, { type: 'image/png' });
+              
+              if (navigator.canShare({ files: [file] })) {
+                await navigator.share({
+                  title: `Enquiry about ${currentProductData.name}`,
+                  text: message,
+                  files: [file]
+                });
+                closeModal();
+                return;
+              }
+            } catch (error) {
+              console.log('Web Share API not available, falling back to WhatsApp URL');
+            }
+          }
+          
+          // Fallback: Open WhatsApp with message including image URL
+          const encodedMessage = encodeURIComponent(message);
+          const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+          window.open(whatsappUrl, '_blank');
+          closeModal();
+        }
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
     </script>
   
 </body></html>

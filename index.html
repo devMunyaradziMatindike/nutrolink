@@ -82,6 +82,10 @@ color: #60a5fa;
 opacity: 0;
 transition: opacity 0.3s ease;
 pointer-events: none;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 1rem;
 }
 #product-modal:not(.hidden) {
 opacity: 1;
@@ -90,6 +94,9 @@ pointer-events: auto;
 #product-modal > div {
 transform: scale(0.9);
 transition: transform 0.3s ease;
+max-height: 90vh;
+overflow-y: auto;
+margin: auto;
 }
 #product-modal:not(.hidden) > div {
 transform: scale(1);
@@ -1236,8 +1243,8 @@ transform: scale(1);
     </div>
 
     <!-- Product Enquiry Modal -->
-    <div id="product-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm">
-      <div class="relative mx-4 w-full max-w-md rounded-2xl border border-white/10 bg-neutral-900 p-6 shadow-2xl">
+    <div id="product-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm">
+      <div class="relative w-full max-w-md rounded-2xl border border-white/10 bg-neutral-900 p-6 shadow-2xl">
         <button id="modal-close" class="absolute right-4 top-4 text-zinc-400 hover:text-white transition">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 6L6 18"></path>
@@ -1459,7 +1466,6 @@ transform: scale(1);
           // Show step 1
           showStep(1);
           modal.classList.remove('hidden');
-          modal.classList.add('flex');
           document.body.style.overflow = 'hidden';
         });
       });
@@ -1476,7 +1482,6 @@ transform: scale(1);
       // Close modal functions
       const closeModal = () => {
         modal.classList.add('hidden');
-        modal.classList.remove('flex');
         document.body.style.overflow = '';
         currentProductData = null;
         showStep(1);

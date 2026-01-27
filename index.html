@@ -85,7 +85,8 @@ pointer-events: none;
 display: flex;
 align-items: center;
 justify-content: center;
-padding: 1rem;
+padding: 0.75rem;
+box-sizing: border-box;
 }
 #product-modal:not(.hidden) {
 opacity: 1;
@@ -94,14 +95,26 @@ pointer-events: auto;
 #product-modal > div {
 transform: scale(0.9);
 transition: transform 0.3s ease;
-max-height: 90vh;
+max-height: 85vh;
 overflow-y: auto;
-width: 100%;
-max-width: 28rem;
-margin: 0 auto;
+width: calc(100% - 1.5rem);
+max-width: 24rem;
+margin: 0;
+box-sizing: border-box;
 }
 #product-modal:not(.hidden) > div {
 transform: scale(1);
+}
+@media (max-width: 640px) {
+  #product-modal {
+    padding: 0.5rem;
+  }
+  #product-modal > div {
+    width: calc(100% - 1rem);
+    max-width: 20rem;
+    max-height: 80vh;
+    padding: 1rem;
+  }
 }
 </style>
 <link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">

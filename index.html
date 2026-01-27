@@ -96,7 +96,9 @@ transform: scale(0.9);
 transition: transform 0.3s ease;
 max-height: 90vh;
 overflow-y: auto;
-margin: auto;
+width: 100%;
+max-width: 28rem;
+margin: 0 auto;
 }
 #product-modal:not(.hidden) > div {
 transform: scale(1);
@@ -1244,7 +1246,7 @@ transform: scale(1);
 
     <!-- Product Enquiry Modal -->
     <div id="product-modal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm">
-      <div class="relative w-full max-w-md rounded-2xl border border-white/10 bg-neutral-900 p-6 shadow-2xl">
+      <div class="relative rounded-2xl border border-white/10 bg-neutral-900 p-6 shadow-2xl">
         <button id="modal-close" class="absolute right-4 top-4 text-zinc-400 hover:text-white transition">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 6L6 18"></path>
